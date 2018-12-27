@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple_Darts", "Simple_Darts\Simple_Darts.csproj", "{9696852C-E83B-4C6F-825F-7793DD15DAC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dartboard", "Dartboard\Dartboard.csproj", "{4DE43FD8-F2D5-472E-8E23-3A5DB8900BD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9696852C-E83B-4C6F-825F-7793DD15DAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9696852C-E83B-4C6F-825F-7793DD15DAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9696852C-E83B-4C6F-825F-7793DD15DAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE43FD8-F2D5-472E-8E23-3A5DB8900BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE43FD8-F2D5-472E-8E23-3A5DB8900BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE43FD8-F2D5-472E-8E23-3A5DB8900BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE43FD8-F2D5-472E-8E23-3A5DB8900BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
