@@ -8,13 +8,17 @@ using Dartboard;
 
 namespace Simple_Darts
 {
+    public static class RandomHolder
+    {
+        
+    }
     public partial class Default : System.Web.UI.Page
     {
-        Random _random = new Random();
+        static readonly Random _random = new Random();
 
-        Dart _dart1 = new Dart(_random);
-        Dart _dart2 = new Dart(_random);
-        Dart _dart3 = new Dart(_random);
+        readonly Dart _dart1 = new Dart(_random);
+        readonly Dart _dart2 = new Dart(_random);
+        readonly Dart _dart3 = new Dart(_random);
 
         protected void Page_Load(object sender, EventArgs e)
         {
