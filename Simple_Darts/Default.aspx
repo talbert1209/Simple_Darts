@@ -23,7 +23,7 @@
             <asp:Label ID="throwResultLabel" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="throwButton" runat="server" Text="Throw" />
+            <asp:Button ID="throwButton" runat="server" OnClick="throwButton_Click" Text="Throw" />
         </div>
     </form>
 </body>
