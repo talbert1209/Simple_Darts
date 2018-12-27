@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Challenge Resources\CS-ASP_045-Challenge-Requirements.txt" />
     <Content Include="Challenge Resources\dartboard.jpg" />
+    <Content Include="Challenge Resources\DartBoard2.jpg" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
