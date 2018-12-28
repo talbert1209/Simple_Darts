@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Challenge Resources\CS-ASP_045-Challenge-Requirements.txt" />
+    <Content Include="Challenge Resources\Dart.jpg" />
     <Content Include="Challenge Resources\dartboard.jpg" />
     <Content Include="Challenge Resources\DartBoard2.jpg" />
     <Content Include="Default.aspx" />
@@ -85,6 +86,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

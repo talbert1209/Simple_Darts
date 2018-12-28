@@ -8,10 +8,6 @@ using Dartboard;
 
 namespace Simple_Darts
 {
-    public static class RandomHolder
-    {
-        
-    }
     public partial class Default : System.Web.UI.Page
     {
         static readonly Random _random = new Random();
