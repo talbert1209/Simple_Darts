@@ -10,10 +10,11 @@ namespace Simple_Darts
 {
     public partial class Default : System.Web.UI.Page
     {
+        private readonly Game _threeHundred = new Game();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
                 HideControls();
             }
@@ -23,7 +24,7 @@ namespace Simple_Darts
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
                 return;
-            var threeHundred = new Game(nameTextBox.Text);
+            humanScoreLabel.Text = $"{nameTextBox.Text}'s Score:";
             nameTextBox.Enabled = false;
             startButton.Enabled = false;
             DisplayControls();
@@ -61,6 +62,24 @@ namespace Simple_Darts
             humanScoreResultLabel.Visible = true;
             computerScoreLabel.Visible = true;
             computerScoreResultLabel.Visible = true;
+        }
+
+        protected void dart1Button_Click(object sender, ImageClickEventArgs e)
+        {
+            dart1ResultLabel.Text = _threeHundred.HumanThrow();
+            dart1Button.Visible = false;
+        }
+
+        protected void dart2Button_Click(object sender, ImageClickEventArgs e)
+        {
+            dart2ResultLabel.Text = _threeHundred.HumanThrow();
+            dart2Button.Visible = false;
+        }
+
+        protected void dart3Button_Click(object sender, ImageClickEventArgs e)
+        {
+            dart3ResultLabel.Text = _threeHundred.HumanThrow();
+            dart3Button.Visible = false;
         }
     }
 }

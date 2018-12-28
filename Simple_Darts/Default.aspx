@@ -37,11 +37,11 @@
 &nbsp;<asp:Label ID="computerScoreResultLabel" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:ImageButton ID="dart1Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" />
+            <asp:ImageButton ID="dart1Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" OnClick="dart1Button_Click" />
 &nbsp;<br />
-            <asp:ImageButton ID="dart2Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" />
+            <asp:ImageButton ID="dart2Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" OnClick="dart2Button_Click" />
 &nbsp;<br />
-            <asp:ImageButton ID="dart3Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" />
+            <asp:ImageButton ID="dart3Button" runat="server" Height="40px" ImageUrl="~/Challenge Resources/Dart.jpg" OnClick="dart3Button_Click" />
         </div>
     </form>
 </body>

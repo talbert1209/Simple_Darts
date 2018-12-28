@@ -5,14 +5,14 @@ namespace Simple_Darts
 {
     public class Game
     {
-        private Player _humanPlayer;
+        private readonly Player _humanPlayer;
         private Player _computerPlayer;
 
-        public Game(string name)
+        public Game()
         {
             var random = new Random();
-            _humanPlayer = new Player(random, name);
-            _computerPlayer = new Player(random, "Computer");
+            _humanPlayer = new Player(random);
+            _computerPlayer = new Player(random);
         }
 
         public string HumanThrow()
