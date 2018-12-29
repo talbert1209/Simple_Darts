@@ -17,8 +17,14 @@ namespace Simple_Darts
 
         public string HumanThrow()
         {
-            return _humanPlayer.Dart.Throw();
+            string throwLocation = _humanPlayer.Dart.Throw();
+            _humanPlayer.Score.ConvertScore(throwLocation);
+            return throwLocation;
         }
 
+        public int GetScore()
+        {
+            return _humanPlayer.Score.Total;
+        }
     }
 }

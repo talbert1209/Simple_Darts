@@ -17,6 +17,7 @@ namespace Simple_Darts
             if (!Page.IsPostBack)
             {
                 HideControls();
+                ViewState.Add("humanScore", 0);
             }
         }
 
@@ -67,18 +68,27 @@ namespace Simple_Darts
         protected void dart1Button_Click(object sender, ImageClickEventArgs e)
         {
             dart1ResultLabel.Text = _threeHundred.HumanThrow();
+            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
+            ViewState.Add("humanScore", score);
+            humanScoreResultLabel.Text = score.ToString();
             dart1Button.Visible = false;
         }
 
         protected void dart2Button_Click(object sender, ImageClickEventArgs e)
         {
             dart2ResultLabel.Text = _threeHundred.HumanThrow();
+            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
+            ViewState.Add("humanScore", score);
+            humanScoreResultLabel.Text = score.ToString();
             dart2Button.Visible = false;
         }
 
         protected void dart3Button_Click(object sender, ImageClickEventArgs e)
         {
             dart3ResultLabel.Text = _threeHundred.HumanThrow();
+            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
+            ViewState.Add("humanScore", score);
+            humanScoreResultLabel.Text = score.ToString();
             dart3Button.Visible = false;
         }
     }
