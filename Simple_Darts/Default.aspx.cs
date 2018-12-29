@@ -69,7 +69,7 @@ namespace Simple_Darts
         {
             dart1ResultLabel.Text = _threeHundred.HumanThrow();
             var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState.Add("humanScore", score);
+            ViewState["humanScore"] = score;
             humanScoreResultLabel.Text = score.ToString();
             dart1Button.Visible = false;
         }
@@ -78,7 +78,7 @@ namespace Simple_Darts
         {
             dart2ResultLabel.Text = _threeHundred.HumanThrow();
             var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState.Add("humanScore", score);
+            ViewState["humanScore"] = score;
             humanScoreResultLabel.Text = score.ToString();
             dart2Button.Visible = false;
         }
@@ -87,7 +87,7 @@ namespace Simple_Darts
         {
             dart3ResultLabel.Text = _threeHundred.HumanThrow();
             var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState.Add("humanScore", score);
+            ViewState["humanScore"] = score;
             humanScoreResultLabel.Text = score.ToString();
             dart3Button.Visible = false;
         }
