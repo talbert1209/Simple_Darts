@@ -41,5 +41,12 @@ namespace Simple_Darts
 
             return _computerPlayer.Score.Total;
         }
+
+        public bool CheckWin(int score)
+        {
+            if (score >= 300)
+                return true;
+            return false;
+        }
     }
 }

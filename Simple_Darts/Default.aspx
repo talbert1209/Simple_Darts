@@ -20,6 +20,8 @@
             <asp:TextBox ID="nameTextBox" runat="server"></asp:TextBox>
 &nbsp;<asp:Button ID="startButton" runat="server" Text="Start Game" OnClick="startButton_Click" />
             <br />
+            <asp:Label ID="messageLabel" runat="server" ForeColor="#CC3300"></asp:Label>
+            <br />
             <br />
             <img alt="Dart Board" class="auto-style1" longdesc="Image Of Dart Board" src="Challenge%20Resources/DartBoard2.jpg" /><br />
             <br />

@@ -25,10 +25,14 @@ namespace Simple_Darts
         protected void startButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                messageLabel.Text = "Please enter a name to start the game.";
                 return;
+            }
             humanScoreLabel.Text = $"{nameTextBox.Text}'s Score:";
             nameTextBox.Enabled = false;
             startButton.Enabled = false;
+            messageLabel.Text = "";
             DisplayControls();
         }
 
@@ -84,6 +88,10 @@ namespace Simple_Darts
 
             if (IsItComputersTurn())
             {
+                if (_threeHundred.CheckWin((int)ViewState["humanScore"]))
+                {
+                    
+                }
                 _threeHundred.ComputersTurn();
                 AddComputerScore();
                 ResetDarts();
