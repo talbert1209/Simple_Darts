@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Dartboard;
 
 namespace Simple_Darts
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : Page
     {
         private readonly Game _threeHundred = new Game();
 
@@ -19,6 +15,7 @@ namespace Simple_Darts
                 HideControls();
                 ViewState.Add("humanScore", 0);
                 ViewState.Add("computerScore", 0);
+                ViewState.Add("playerName", "");
             }
         }
 
@@ -32,6 +29,8 @@ namespace Simple_Darts
             humanScoreLabel.Text = $"{nameTextBox.Text}'s Score:";
             nameTextBox.Enabled = false;
             startButton.Enabled = false;
+            ViewState["playerName"] = nameTextBox.Text;
+            nameTextBox.Text = "";
             messageLabel.Text = "";
             DisplayControls();
         }
@@ -74,11 +73,15 @@ namespace Simple_Darts
         {
             AddHumanScore(dart1ResultLabel, dart1Button);
 
+            if (_threeHundred.CheckWin((int)ViewState["humanScore"]))
+            {
+                ManageWin(ViewState["playerName"].ToString());
+                return;
+            }
+
             if (IsItComputersTurn())
             {
-                _threeHundred.ComputersTurn();
-                AddComputerScore();
-                ResetDarts();
+                ComputersTurn();
             }
         }
 
@@ -86,15 +89,15 @@ namespace Simple_Darts
         {
             AddHumanScore(dart2ResultLabel, dart2Button);
 
+            if (_threeHundred.CheckWin((int)ViewState["humanScore"]))
+            {
+                ManageWin(ViewState["playerName"].ToString());
+                return;
+            }
+
             if (IsItComputersTurn())
             {
-                if (_threeHundred.CheckWin((int)ViewState["humanScore"]))
-                {
-                    
-                }
-                _threeHundred.ComputersTurn();
-                AddComputerScore();
-                ResetDarts();
+                ComputersTurn();
             }
         }
 
@@ -102,11 +105,15 @@ namespace Simple_Darts
         {
             AddHumanScore(dart3ResultLabel, dart3Button);
 
+            if (_threeHundred.CheckWin((int)ViewState["humanScore"]))
+            {
+                ManageWin(ViewState["playerName"].ToString());
+                return;
+            }
+
             if (IsItComputersTurn())
             {
-                _threeHundred.ComputersTurn();
-                AddComputerScore();
-                ResetDarts();
+                ComputersTurn();
             }
         }
 
@@ -139,6 +146,39 @@ namespace Simple_Darts
             dart1Button.Visible = true;
             dart2Button.Visible = true;
             dart3Button.Visible = true;
+        }
+
+        public void ManageWin(string playerName)
+        {
+            HideControls();
+            messageLabel.Text = $"{playerName} Wins! Play again?";
+            ResetGame();
+        }
+
+        private void ComputersTurn()
+        {
+            _threeHundred.ComputersThrows();
+            AddComputerScore();
+            if (_threeHundred.CheckWin((int) ViewState["computerScore"]))
+            {
+                ManageWin("Computer");
+                return;
+            }
+
+            ResetDarts();
+        }
+
+        private void ResetGame()
+        {
+            nameTextBox.Enabled = true;
+            startButton.Enabled = true;
+            ViewState["humanScore"] = 0;
+            ViewState["computerScore"] = 0;
+            dart1ResultLabel.Text = "";
+            dart2ResultLabel.Text = "";
+            dart3ResultLabel.Text = "";
+            humanScoreResultLabel.Text = "";
+            computerScoreResultLabel.Text = "";
         }
     }
 }

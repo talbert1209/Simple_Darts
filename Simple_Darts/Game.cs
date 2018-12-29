@@ -1,5 +1,4 @@
 ﻿using System;
-using Dartboard;
 
 namespace Simple_Darts
 {
@@ -29,7 +28,7 @@ namespace Simple_Darts
             return _computerPlayer.Score.Total;
         }
 
-        public int ComputersTurn()
+        public int ComputersThrows()
         {
             var throw1 = _computerPlayer.Dart.Throw();
             var throw2 = _computerPlayer.Dart.Throw();

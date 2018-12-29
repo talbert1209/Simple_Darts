@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Runtime.InteropServices;
-
-namespace Simple_Darts
+﻿namespace Simple_Darts
 {
     public class Score
     {
