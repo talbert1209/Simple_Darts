@@ -18,6 +18,7 @@ namespace Simple_Darts
             {
                 HideControls();
                 ViewState.Add("humanScore", 0);
+                ViewState.Add("computerScore", 0);
             }
         }
 
@@ -68,28 +69,61 @@ namespace Simple_Darts
         protected void dart1Button_Click(object sender, ImageClickEventArgs e)
         {
             dart1ResultLabel.Text = _threeHundred.HumanThrow();
-            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState["humanScore"] = score;
-            humanScoreResultLabel.Text = score.ToString();
+            var humanScore = (int)ViewState["humanScore"] + _threeHundred.GetScore(true);
+            ViewState["humanScore"] = humanScore;
+            humanScoreResultLabel.Text = humanScore.ToString();
             dart1Button.Visible = false;
+
+            if (IsItComputersTurn())
+            {
+                _threeHundred.ComputersTurn();
+                AddComputerScore();
+            }
         }
 
         protected void dart2Button_Click(object sender, ImageClickEventArgs e)
         {
             dart2ResultLabel.Text = _threeHundred.HumanThrow();
-            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState["humanScore"] = score;
-            humanScoreResultLabel.Text = score.ToString();
+            var humanScore = (int)ViewState["humanScore"] + _threeHundred.GetScore(true);
+            ViewState["humanScore"] = humanScore;
+            humanScoreResultLabel.Text = humanScore.ToString();
             dart2Button.Visible = false;
+
+            if (IsItComputersTurn())
+            {
+                _threeHundred.ComputersTurn();
+                AddComputerScore();
+            }
         }
 
         protected void dart3Button_Click(object sender, ImageClickEventArgs e)
         {
             dart3ResultLabel.Text = _threeHundred.HumanThrow();
-            var score = (int)ViewState["humanScore"] + _threeHundred.GetScore();
-            ViewState["humanScore"] = score;
-            humanScoreResultLabel.Text = score.ToString();
+            var humanScore = (int)ViewState["humanScore"] + _threeHundred.GetScore(true);
+            ViewState["humanScore"] = humanScore;
+            humanScoreResultLabel.Text = humanScore.ToString();
             dart3Button.Visible = false;
+
+            if (IsItComputersTurn())
+            {
+                _threeHundred.ComputersTurn();
+                AddComputerScore();
+            }
+        }
+
+        private bool IsItComputersTurn()
+        {
+            if (dart1Button.Visible == false && dart2Button.Visible == false && dart1Button.Visible == false)
+                return true;
+
+            return false;
+        }
+
+        private void AddComputerScore()
+        {
+            var computerScore = (int)ViewState["computerScore"] + _threeHundred.GetScore(false);
+            ViewState["computerScore"] = computerScore;
+            computerScoreResultLabel.Text = computerScore.ToString();
         }
     }
 }

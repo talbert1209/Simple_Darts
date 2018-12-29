@@ -22,9 +22,24 @@ namespace Simple_Darts
             return throwLocation;
         }
 
-        public int GetScore()
+        public int GetScore(bool human)
         {
-            return _humanPlayer.Score.Total;
+            if (human)
+                return _humanPlayer.Score.Total;
+            return _computerPlayer.Score.Total;
+        }
+
+        public int ComputersTurn()
+        {
+            var throw1 = _computerPlayer.Dart.Throw();
+            var throw2 = _computerPlayer.Dart.Throw();
+            var throw3 = _computerPlayer.Dart.Throw();
+
+            _computerPlayer.Score.ConvertScore(throw1);
+            _computerPlayer.Score.ConvertScore(throw2);
+            _computerPlayer.Score.ConvertScore(throw3);
+
+            return _computerPlayer.Score.Total;
         }
     }
 }
